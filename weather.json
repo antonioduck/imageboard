@@ -1,0 +1,24 @@
+{
+  "cities": [
+    {
+      "name": "Madrid",
+      "temp": 40
+    },
+    {
+      "name": "Berlin",
+      "temp": 23
+    },
+    {
+      "name": "London",
+      "temp": 18
+    },
+    {
+      "name": "Johannesburg",
+      "temp": 9
+    },
+    {
+      "name": "Paris",
+      "temp": 28
+    }
+  ]
+}

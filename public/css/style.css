@@ -1,0 +1,30 @@
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.hot {
+  color: red;
+  text-shadow: 1px 1px 10px orange;
+}
+
+.cold {
+  color: lightskyblue;
+  text-shadow: 1px 1px 10px pink;
+}
+
+.cities {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
+}
+
+.city {
+  font-size: 22px;
+  padding: 3px;
+}
+
+.highlighted {
+  background-color: yellow;
+  font-size: 36px;
+}

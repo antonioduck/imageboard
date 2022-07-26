@@ -1,15 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Imageboard</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Weather or Not</title>
+
     </head>
     <body>
-        <script
-            src="/js/app.js"
-            type="module"
-            crossorigin="use-credentials"
-        ></script>
+        <main id="main">
+            <!-- <h1>Weather for {{ cities.length }} cities</h1>
+            <p>The answer is {{ 6 * 7 }}</p>
+
+            <section class="cities">
+                <div class="city"
+                     v-for="city in cities"
+                     v-on:mouseover="highlight"
+                     v-on:mouseout="unhighlight">
+                    <div>{{ city.name }}</div>
+                    <div class="temperature" v-bind:class="getClassForTemp(city.temp)">
+                        {{ city.temp }}<span v-if="city.temp >= 35">!</span>
+                        <span v-if="city.temp >= 35">🔥</span>
+                        <span v-if="city.temp <= 10">🧊</span>
+                    </div>
+                </div>
+            </section>
+            <h2>Welcome, {{ styleText(guest || 'mystery person') }}!</h2>
+            <input type="text" v-model="guest"> -->
+
+<div class="container">
+
+<div class="child">
+
+    <div class="image" v-for="image in images">
+
+<div>{{images.url}}</div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+        </main>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="/js/weather.js"></script>
     </body>
 </html>
