@@ -10,30 +10,36 @@
     </head>
     <body>
         <main id="main">
-  div class="form">
+
+            <h2>Are you ready to make some changes to your pictures?</h2>
+            <div class="form">
                 <form method="POST" action="/image" ref="addImageForm" enctype="multipart/form-data" @submit.prevent="onFormSubmit">
-                    <label for="title">Title</label>
+                    <label for="title">Title: </label>
                     <input type="text" name="title">
-                    <label for="description">Description</label>
+                    <label for="description">Description: </label>
                     <input type="text" name="description">
-                    <label for="username">Username</label>
-                    <input type="text" name="username">
-                    <label for="photo">Upload a Photo</label>
+                    <label for="username">Username: </label>
+                    <input type="text" name="username"></br>
+                    <label for="photo">Upload a Photo:  </label>
                     <input type="file" accept="image/*" name="photo" class="upload-btn">
                     <input type="submit" name="button" class="submit-btn">
                 </form>
+
+
+  
                 <div class="status">{{status}}</div>
             </div>
             <div class="images">
-                <div id="image" v-for="image in images">
-                    <img v-bind:src="image.url" v-bind:alt="image.title">
+                <div id="image" v-for="image in images" class="image">
+                    <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
+          height="100" class="image2" >
                     <p>{{ image.title }}</p>
                 </div>
             </div>
 
 
 
-<h1>Upload Your Files</h1>
+    <!-- <h1>Upload Your Files</h1>
     <form
         action="/image"
         method="post"
@@ -53,10 +59,11 @@
             v-for="image in images"
             v-bind:src="image"
             alt="an image"
-            class="image"
+            class="image"  width="180"
+          height="100"
         />
-    </div>
-   <div class="parent">
+    </div> -->
+   <!-- <div class="parent">
 
  
 
@@ -68,12 +75,12 @@
 
 
 
-    </div>
+    </div> -->
 
 
 
 
-</div>
+  </div>
 
 
 

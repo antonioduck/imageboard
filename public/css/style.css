@@ -1,62 +1,60 @@
+body {
+    display: grid;
+    /* grid-template-rows: 1fr 50px; */
+    background: linear-gradient(to bottom, #7927b2, lightgrey);
+    /* justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    font-family: fantasy;
+}
 main {
-  width: 80%;
-  margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: bisque;
 }
 
-.hot {
-  color: red;
-  text-shadow: 1px 1px 10px orange;
-}
-
-.cold {
-  color: lightskyblue;
-  text-shadow: 1px 1px 10px pink;
-}
-
-/* .images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 3rem;
-  border: 2px solid black;
-} */
-
-/* .image {
-  font-size: 22px;
-  padding: 3px;
-} */
-
-.highlighted {
-  background-color: yellow;
-  font-size: 36px;
-}
-
-.parent {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  background-color: grey;
-
-  text-align: center;
-  margin: 5px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+.images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    gap: 4vw;
 }
 
 .image {
-  width: 190px;
-  height: 150px;
-  /* display: grid; */
-  /* align-content: center; */
-  /* justify-content: space-evenly; */
-  border: 2px solid black;
-  border-radius: 5%;
-  text-align: center;
-  margin: 5px;
+    width: 190px;
+    height: 160px;
+    /* display: grid; */
+    /* align-content: center; */
+    /* justify-content: space-evenly; */
+    border: 2px solid black;
+    border-radius: 5%;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.5);
+    background-color: aliceblue;
 }
 
 .image2 {
-  margin: 5px;
-  border-radius: 5%;
+    border-radius: 5%;
+    border: 2px solid black;
+}
+
+.form {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    background: linear-gradient(to bottom, beige, pink);
+    border: #000000 2px solid;
+    margin: 2em;
+    padding: 1em;
+    /* border-radius: 2rem; */
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.5);
 }
