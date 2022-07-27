@@ -11,12 +11,6 @@ const app = Vue.createApp({
       //   cities: [],
       //   guest: "",
       images: [],
-      id: "",
-      url: "",
-      username: "",
-      title: "",
-      description: "",
-      created_at: "",
     };
   },
   // Methods you can call from inside the HTML via Vue!
