@@ -31,12 +31,12 @@ app.use(express.json());
 
 app.get("/images", (req, res) => {
     db.getAllImages().then((results) => {
-        console.log(
-            "the results of my GetAllImages in /get cities is:",
-            results
-        );
+        // console.log(
+        //     "the results of my GetAllImages in /get cities is:",
+        //     results
+        // );
         const data = results.rows;
-        console.log("the results I need in get/images is:", data);
+        // console.log("the results I need in get/images is:", data);
 
         res.json(data);
     });
@@ -62,24 +62,17 @@ app.post("/image", uploader.single("photo"), s3.upload, (req, res) => {
     }
 });
 
-app.post("/image", uploader.single("photo"), (req, res) => {
-    // grab the image that was sent [multer]
-    // save it somewhere [multer]
-    // respond to the client - success/failure
+app.get("/images/:id", (req, res) => {
+    console.log("what I am getting back from req.params : ", req.params);
 
-    // req.file is created by Multer if the upload worked!
-    if (req.file) {
-        res.json({
-            success: true,
-            message: "File uploaded. Good job! 🚀",
-            file: `/${req.file.filename}`,
+    db.getImagesInformation(req.params.id)
+        .then((results) => {
+            console.log("the result rows are ", results.rows);
+            res.json(results.rows[0]);
+        })
+        .catch((err) => {
+            console.log("error in getImagesInformation", err);
         });
-    } else {
-        res.json({
-            success: false,
-            message: "File upload failed. 😢",
-        });
-    }
 });
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));

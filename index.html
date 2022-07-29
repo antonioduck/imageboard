@@ -11,6 +11,19 @@
     <body>
         <main id="main">
 
+<!-- 
+        <p class="component" v-for="image in images" :key="image.id" v-if="images.length"
+            @click="showId(image.id)">
+              <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
+          height="100" class="image2" @click="this.checkForId=image.id" >
+             
+        </p> -->
+
+        <!-- this renders our component (inside Main) -->
+        
+    <!-- </div> -->
+
+
             <h2>Are you ready to make some changes to your pictures?</h2>
             <div class="form">
                 <form method="POST" action="/image" ref="addImageForm" enctype="multipart/form-data" @submit.prevent="onFormSubmit">
@@ -24,7 +37,7 @@
                     <input type="file" accept="image/*" name="photo" class="upload-btn">
                     <input type="submit" name="button" class="submit-btn">
                 </form>
-
+                      <my-component v-if="this.id"  @close="closeModalInApp"   :id='id'  images></my-component>
 
   
                 <div class="status">{{status}}</div>
@@ -32,11 +45,12 @@
             <div class="images">
                 <div id="image" v-for="image in images" class="image">
                     <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
-          height="100" class="image2" >
+          height="100" class="image2" @click="showId(image.id)" >
                     <p>{{ image.title }}</p>
                 </div>
             </div>
-
+           
+               
 
 
     <!-- <h1>Upload Your Files</h1>
@@ -68,7 +82,7 @@
  
 
     <div class="image" v-for="image in images" >
-         <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
+         <img v-bind:src="image.url" v-bind:alt="image.title" width=""
           height="100" class="image2">
           
         {{image.title}}
