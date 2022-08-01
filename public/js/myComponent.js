@@ -1,11 +1,14 @@
+import component4comments from "./component4comments.js";
+
 const myComponent = {
     data() {
         return {
-            name: "Layla",
-            num: 0,
             image: {},
             ImgCreationDate: [],
         };
+    },
+    components: {
+        "comment-component": component4comments,
     },
     props: ["id"],
     mounted() {
@@ -32,7 +35,10 @@ const myComponent = {
                 //     this.image.created_at
                 // );
                 let OldData = this.image.created_at;
-                let NewCreatedAt = OldData.slice(0, 10);
+                let NewCreatedAt = OldData.slice(0, 10)
+                    .split("-")
+                    .reverse()
+                    .join("-");
                 console.log("the data I will actually use are ", NewCreatedAt);
 
                 this.ImgCreationDate = NewCreatedAt;
@@ -61,15 +67,27 @@ const myComponent = {
         <div class='component'> 
         
         <h3  class=myX @click='closeModalInComponent'>X</h3>
-             <p><img v-bind:src="image.url" v-bind:alt="image.title" width="400"
+
+         <div class="modalComponent">
+         
+         <p> < </p>
+
+         <p> <img v-bind:src="image.url" v-bind:alt="image.title" width="400"
           height="300" class="image2"  ></p>
-           <p>{{image.title}}</p>
-           <p>{{image.descriprion}}</p>
+
+            <p> > </p>
+
+
+          </div>
+          
+           <p>Title:{{image.title}}</p>
+           <p>Description:{{image.description}}</p>
            <p>Uploaded by:{{image.username}}</p>
            <p>And created at:{{ImgCreationDate}}</p>
           
-          
+          <comment-component :IdOfComment="this.id"></comment-component>
         </div>
+        
         </div>
     `,
 };

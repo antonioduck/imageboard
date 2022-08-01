@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/style.css">
-        <title>Weather or Not</title>
+        <title>Image changes</title>
 
     </head>
     <body>
@@ -14,7 +14,7 @@
 <!-- 
         <p class="component" v-for="image in images" :key="image.id" v-if="images.length"
             @click="showId(image.id)">
-              <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
+            <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
           height="100" class="image2" @click="this.checkForId=image.id" >
              
         </p> -->
@@ -37,7 +37,7 @@
                     <input type="file" accept="image/*" name="photo" class="upload-btn">
                     <input type="submit" name="button" class="submit-btn">
                 </form>
-                      <my-component v-if="this.id"  @close="closeModalInApp"   :id='id'  images></my-component>
+                    <my-component v-if="this.id"  @close="closeModalInApp"   :id='id' ></my-component>
 
   
                 <div class="status">{{status}}</div>
@@ -45,62 +45,24 @@
             <div class="images">
                 <div id="image" v-for="image in images" class="image">
                     <img v-bind:src="image.url" v-bind:alt="image.title" width="180"
-          height="100" class="image2" @click="showId(image.id)" >
+        height="100" class="image2" @click="showId(image.id)" >
                     <p>{{ image.title }}</p>
                 </div>
             </div>
-           
-               
+        
+   
 
 
-    <!-- <h1>Upload Your Files</h1>
-    <form
-        action="/image"
-        method="post"
-        enctype="multipart/form-data"
-        @submit.prevent="onFormSubmit"
-    >
-        <div class="form-row">
-            <label for="photo">Please select your file</label>
-            <input type="file" name="photo" id="photo" />
-        </div>
-        <input type="submit" value="Upload!" class="btn-submit" />
-    </form>
-    <div class="status">{{ message }}</div>
-
-    <div class="images">
-        <img
-            v-for="image in images"
-            v-bind:src="image"
-            alt="an image"
-            class="image"  width="180"
-          height="100"
-        />
-    </div> -->
-   <!-- <div class="parent">
 
  
 
-    <div class="image" v-for="image in images" >
-         <img v-bind:src="image.url" v-bind:alt="image.title" width=""
-          height="100" class="image2">
-          
-        {{image.title}}
 
+<div class="button-class">
+ <button type="button"  v-if="MyButton" @click="getMoreImages" id="GetmoreImagesButton">Load More images</button>
 
+</div>
 
-    </div> -->
-
-
-
-
-  </div>
-
-
-
-
-
-
+<!-- <div class="modalComponent"></div> <p></p> -->
 
 
 

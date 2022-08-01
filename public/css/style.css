@@ -1,10 +1,10 @@
 body {
     display: grid;
     /* grid-template-rows: 1fr 50px; */
-    background: linear-gradient(to bottom, blue, lightgrey);
-    /* justify-content: center;
-    align-items: center; */
-    height: 100vh;
+    background: linear-gradient(to left, blue, lightgrey);
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: auto;
     font-family: fantasy;
 }
 input {
@@ -56,7 +56,7 @@ h2 {
     border: #000000 2px solid;
     margin: 2em;
     padding: 1em;
-    /* border-radius: 2rem; */
+    border-radius: 2rem;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.5);
 
     z-index: 0;
@@ -89,10 +89,40 @@ h2 {
 }
 
 .overlay {
+    display: grid;
+    overflow-y: scroll;
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
-    height: 100%;
+    height: auto;
     z-index: 1;
+}
+.CommentSection {
+    text-align: center;
+    background-color: grey;
+    border: 2px dotted white;
+    border-radius: 10px;
+}
+#GetmoreImagesButton {
+    border-radius: 10px;
+}
+
+.button-class {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalComponent {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin-left: 10px;
+    margin-right: 10px;
 }

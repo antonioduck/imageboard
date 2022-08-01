@@ -11,8 +11,9 @@ const app = Vue.createApp({
             message: "Please upload a file",
             status: "",
             checkForValue: 10,
-            // hello: "Hello Buckwheat!",
+            lowestTableId: "",
             checkForId: null,
+            MyButton: 10,
         };
     },
     components: {
@@ -22,6 +23,47 @@ const app = Vue.createApp({
         "my-component": myComponent,
     },
     methods: {
+        getMoreImages() {
+            let ImageArray = [];
+            this.images.forEach((image) => ImageArray.push(image.id));
+
+            let lowestScreenedId = Math.min(...ImageArray);
+            // console.log("lowest id that we see is:", lowestScreenedId);
+
+            fetch(`/more-images/${lowestScreenedId}`)
+                .then((res) => res.json())
+
+                .then((extraImages) => {
+                    extraImages.forEach((image) => this.images.push(image));
+                    this.lowestTableId = extraImages[0].lowestTableId;
+
+                    // console.log("extraImages: ", extraImages);
+                    // console.log(
+                    //     "extraImages[0].lowestTableId",
+                    //     extraImages[0].lowestTableId
+                    // );
+                    // console.log("our new created array is : ", this.images);
+
+                    console.log(
+                        "here is the lowestTableId: ",
+                        this.lowestTableId
+                    );
+                    console.log(
+                        "this.images[this.images.length - 1].id: ",
+                        this.images[this.images.length - 1].id
+                    );
+                    if (
+                        this.images[this.images.length - 1].id ===
+                        this.lowestTableId
+                    ) {
+                        this.MyButton = 0;
+                    }
+                })
+                .catch((err) => {
+                    this.status = err.status;
+                });
+        },
+
         closeModalInApp() {
             console.log("close fn in the parent is running!");
             this.id = null;
@@ -56,7 +98,7 @@ const app = Vue.createApp({
                     // by changing the value of data: message.
                     // this.message = serverData.message;
                     // if there is an image, add it to the list in data!
-                    this.images.push(serverData.file);
+                    this.images.unshift(serverData.file);
                     this.status = serverData.status;
                 })
                 .catch((err) => {

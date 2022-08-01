@@ -74,6 +74,48 @@ app.get("/images/:id", (req, res) => {
             console.log("error in getImagesInformation", err);
         });
 });
+
+app.get("/comments/:IdOfComment", (req, res) => {
+    let id = req.params.IdOfComment;
+    console.log("the id we look is ", id);
+    db.getCommentsById(id)
+        .then((result) => {
+            //console.log(result.rows);
+            //send response back as json for the fetch
+            return res.json(result.rows);
+        })
+        .catch((err) => {
+            console.log("error in getCommentsById", err);
+        });
+});
+
+app.get("/more-images/:id", (req, res) => {
+    db.getMoreImages(req.params.id)
+        .then((results) => {
+            //console.log("results.rows: is ", results.rows);
+            res.json(results.rows);
+        })
+        .catch((error) => {
+            console.log("error in getMoreImages: ", error);
+            console.log(req.params.id);
+        });
+});
+
+app.post("/comment", (req, res) => {
+    console.log("req body is", req.body);
+    db.insertTheComment(req.body.id, req.body.username, req.body.comment)
+        .then((results) => {
+            console.log(
+                "inserting new comment worked, the info I want is ",
+                results.rows
+            );
+
+            res.json({
+                newComment: results.rows[0],
+            });
+        })
+        .catch((err) => console.log("error in inserting new comment", err));
+});
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
