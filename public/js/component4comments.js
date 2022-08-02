@@ -55,8 +55,8 @@ const component4comments = {
          <div class="FieldOfComments">
             <input type="text" v-model.trim="username" name="username" id="username" placeholder=" username" />
             <input type="textarea" v-model.trim="comment" name="comment" id="comment" placeholder=" comment" />
-            </div>
-            <input type="submit" value="Submit comment" class="comment-submit" @click="DuringCommentSubmit" /></div>
+            </div></br>
+            <input type="submit" value="Submit comment" class="comment-submit-btn" @click="DuringCommentSubmit" /></div>
             <h4> Other Comments : </h4>
             <div class="CommentSection" v-for="comment in comments">
             

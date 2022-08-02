@@ -32,14 +32,14 @@ const app = Vue.createApp({
       e.currentTarget.classList.remove("highlighted");
     },
   },
-  // Run this when the Vue lifecycle MOUNTED event happens!
+ 
   mounted() {
     console.log("The vue app is ready to go!");
     fetch("/images")
       .then((answer) => answer.json())
       .then((ImagesData) => {
         console.log("here I am console loging the image data ", ImagesData);
-        // Vue understands 'this.cities' to refer to
+      
         // the DATA's property named 'cities'.
         this.images = ImagesData;
       });

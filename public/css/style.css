@@ -15,7 +15,7 @@ h2 {
     text-align: center;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: bisque;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .images {
@@ -115,6 +115,35 @@ h2 {
     align-items: center;
 }
 
+.submit-btn {
+    background-color: white;
+    transition-duration: 0.4s;
+}
+.submit-btn:hover {
+    background-color: blue;
+    color: white;
+    transform: scale(1.15);
+}
+
+.comment-submit-btn {
+    background-color: white;
+    transition-duration: 0.4s;
+}
+.comment-submit-btn:hover {
+    background-color: lightgrey;
+
+    transform: scale(1.1);
+}
+#GetmoreImagesButton {
+    background-color: white;
+    transition-duration: 0.4s;
+}
+#GetmoreImagesButton:hover {
+    background-color: lightpink;
+    color: white;
+    transform: scale(1.1);
+}
+
 .modalComponent {
     display: flex;
     text-align: center;
@@ -125,4 +154,7 @@ h2 {
 p {
     margin-left: 10px;
     margin-right: 10px;
+}
+#comment {
+    margin-bottom: 10px;
 }
